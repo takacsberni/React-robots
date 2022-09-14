@@ -12,11 +12,15 @@ class App extends React.Component{
         }
     }
 
+    onSearchChange = (event) => {
+        console.log(event);
+    }
+
     render() {
         return (
             <div className="tc">
-                <SearchBox />
-                <TerminatorLister models1={models1} />;
+                <SearchBox searchChange={this.onSearchChange} />
+                <TerminatorLister models1={this.state.models} />;
             </div>
         );
     }
