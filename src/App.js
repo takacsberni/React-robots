@@ -8,14 +8,15 @@ class App extends React.Component{
         super();
         this.state ={
             models: models1,
-            searchfield: ''
+            searchField: ''
         }
     }
 
     onSearchChange = (event) => {
         const filteredModels = this.state.models.filter( (model) => {
-            return model.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+            return model.name.toLowerCase().includes(this.state.searchField.toLowerCase())
         })
+        this.setState( {searchField: event.target.value})
         console.log(filteredModels);
         console.log(event.target.value);
     }
