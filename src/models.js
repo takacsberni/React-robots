@@ -49,4 +49,34 @@ export const models1 = [
         name: "HK-Drone",
         serialNumber: 202711110010
     },
+    {
+        id: 11,
+        name: "T-600",
+        serialNumber: 202711110011
+    },
+    {
+        id: 12,
+        name: "T-X",
+        serialNumber: 202711110012
+    },
+    {
+        id: 13,
+        name: "T-3000",
+        serialNumber: 202711110013
+    },
+    {
+        id: 14,
+        name: "T-900",
+        serialNumber: 202711110014
+    },
+    {
+        id: 15,
+        name: "T-800",
+        serialNumber: 202711110015
+    },
+    {
+        id: 16,
+        name: "T-300",
+        serialNumber: 202711110016
+    },
 ]
