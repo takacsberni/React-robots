@@ -13,19 +13,18 @@ class App extends React.Component{
     }
 
     onSearchChange = (event) => {
-        const filteredModels = this.state.models.filter( (model) => {
-            return model.name.toLowerCase().includes(this.state.searchField.toLowerCase())
-        })
         this.setState( {searchField: event.target.value})
-        console.log(filteredModels);
-        console.log(event.target.value);
+        // console.log(event.target.value);
     }
 
     render() {
+        const filteredModels = this.state.models.filter( (model) => {
+            return model.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+        })
         return (
             <div className="tc">
                 <SearchBox searchChange={this.onSearchChange} />
-                <TerminatorLister models1={this.state.models} />;
+                <TerminatorLister models1={filteredModels} />;
             </div>
         );
     }
