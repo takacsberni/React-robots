@@ -13,6 +13,10 @@ class App extends React.Component{
     }
 
     onSearchChange = (event) => {
+        const filteredModels = this.state.models.filter( (model) => {
+            return model.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        })
+        console.log(filteredModels);
         console.log(event.target.value);
     }
 
