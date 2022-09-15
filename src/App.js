@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import TerminatorLister from "./components/temrinator-lister";
-import {models1} from "./models";
 import SearchBox from "./components/searchbox";
 
-function App ()  {
+function App()  {
     // constructor() {
     //     super();
     //     this.state ={
@@ -12,12 +11,19 @@ function App ()  {
     //     }
     // }
     const [models, setModels] = useState([]);
-    const [searchField, setSearchField] = useState([]);
+    const [searchField, setSearchField] = useState('');
 
     const onSearchChange = (event) => {
         setSearchField( event.target.value);
         // console.log(event.target.value);
     };
+
+    useEffect(() => {
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then( (response) => response.json())
+        .then( (users) => setModels(users)
+        )});
 
     const filteredModels = models.filter( (model) => {
         return model.name.toLowerCase().includes(searchField.toLowerCase());
