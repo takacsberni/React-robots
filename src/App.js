@@ -11,6 +11,9 @@ function App ()  {
     //         searchField: ''
     //     }
     // }
+    const [models, setModels] = useState([]);
+    const [searchField, setSearchField] = useState([]);
+
     const onSearchChange = (event) => {
         this.setState( {searchField: event.target.value})
         // console.log(event.target.value);
