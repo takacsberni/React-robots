@@ -7,7 +7,7 @@ const TerminatorLister = ( {models1}) => {
             {models1.map(
                 (model) => {
                     return (
-                        <Terminator id={model.id} name={model.name} serialNumber={model.serialNumber} key={model.id} />
+                        <Terminator id={model.id} name={model.name} serialNumber={model.phone} key={model.id} />
                     )
                 }
             )}
