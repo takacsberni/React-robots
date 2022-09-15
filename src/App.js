@@ -3,19 +3,12 @@ import TerminatorLister from "./components/temrinator-lister";
 import SearchBox from "./components/searchbox";
 
 function App()  {
-    // constructor() {
-    //     super();
-    //     this.state ={
-    //         models: models1,
-    //         searchField: ''
-    //     }
-    // }
+
     const [models, setModels] = useState([]);
     const [searchField, setSearchField] = useState('');
 
     const onSearchChange = (event) => {
         setSearchField( event.target.value);
-        // console.log(event.target.value);
     };
 
     useEffect(() => {
