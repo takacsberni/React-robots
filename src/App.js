@@ -23,7 +23,7 @@ function App()  {
     fetch("https://jsonplaceholder.typicode.com/users")
         .then( (response) => response.json())
         .then( (users) => setModels(users)
-        )});
+        )}, []);
 
     const filteredModels = models.filter( (model) => {
         return model.name.toLowerCase().includes(searchField.toLowerCase());
