@@ -1,13 +1,13 @@
 import React from "react";
 import TerminatorLister from "./components/temrinator-lister";
-import {models1} from "./models";
+// import {models1} from "./models";
 import SearchBox from "./components/searchbox";
 
 class App extends React.Component{
     constructor() {
         super();
         this.state ={
-            models: models1,
+            models: [],
             searchField: ''
         }
     }
@@ -27,6 +27,12 @@ class App extends React.Component{
                 <TerminatorLister models1={filteredModels} />;
             </div>
         );
+    }
+
+    componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/users") //gives back a promise
+            .then((response) => response.json())
+            .then((users) => this.setState( {models: users}))
     }
 }
 
