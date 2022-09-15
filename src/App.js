@@ -19,17 +19,19 @@ function App ()  {
         // console.log(event.target.value);
     };
 
-    return (){
-        const filteredModels = this.state.models.filter( (model) => {
-            return model.name.toLowerCase().includes(this.state.searchField.toLowerCase())
-        })
-        return (
-            <div className="tc">
-                <SearchBox searchChange={this.onSearchChange} />
-                <TerminatorLister models1={filteredModels} />;
-            </div>
-        );
+    const filteredModels = models.filter( (model) => {
+        return model.name.toLowerCase().includes(searchField.toLowerCase());
+    });
+    if (models.length === 0){
+        return <h1>Loading... </h1>
     }
+
+    return (
+        <div className="tc">
+            <SearchBox searchChange={onSearchChange} />
+            <TerminatorLister models1={filteredModels} />;
+        </div>
+    );
 }
 
 export default App
