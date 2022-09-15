@@ -15,9 +15,9 @@ function App ()  {
     const [searchField, setSearchField] = useState([]);
 
     const onSearchChange = (event) => {
-        this.setState( {searchField: event.target.value})
+        setSearchField( event.target.value);
         // console.log(event.target.value);
-    }
+    };
 
     return (){
         const filteredModels = this.state.models.filter( (model) => {
