@@ -6,17 +6,18 @@ function App()  {
 
     const [models, setModels] = useState([]);
     const [searchField, setSearchField] = useState('');
+    const [counter, setCounter] = useState(0);
 
     const onSearchChange = (event) => {
         setSearchField( event.target.value);
     };
 
     useEffect(() => {
-
+        console.log(counter);
     fetch("https://jsonplaceholder.typicode.com/users")
         .then( (response) => response.json())
         .then( (users) => setModels(users)
-        )}, []);
+        )}, [counter]);
 
     const filteredModels = models.filter( (model) => {
         return model.name.toLowerCase().includes(searchField.toLowerCase());
@@ -27,6 +28,7 @@ function App()  {
 
     return (
         <div className="tc">
+            <button onClick={()=>setCounter(counter+1)}>Click me!</button>
             <SearchBox searchChange={onSearchChange} />
             <TerminatorLister models1={filteredModels} />;
         </div>
