@@ -21,6 +21,9 @@ class App extends React.Component{
         const filteredModels = this.state.models.filter( (model) => {
             return model.name.toLowerCase().includes(this.state.searchField.toLowerCase())
         })
+        if (this.state.models.length === 0){
+            return <h1> Loading ... </h1>
+        }
         return (
             <div className="tc">
                 <SearchBox searchChange={this.onSearchChange} />
