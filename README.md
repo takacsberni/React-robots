@@ -1,7 +1,8 @@
 # A React application to practise fetching data from an endpoint
 
 Images are from robohash.org, names of the machines are stored in models.js. It also includes a search option.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
